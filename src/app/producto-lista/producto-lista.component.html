@@ -1,0 +1,16 @@
+<div class="container text-white bg-dark">
+  <h1 class="text-center"> Lista de Productos </h1>
+  <input type="text" class="form-control mb-3" [(ngModel)]="searchQuery" placeholder="Buscar producto...">
+  <button class="btn btn-primary text-center" (click)="BusquedaProductos()">Buscar</button>
+  <div class="row">
+    <div *ngFor="let producto of productos" class="col-md-4 mb-3">
+      <div class="card">
+        <img [src]="producto.imagen" class="card-img-top" alt="{{ producto.nombre }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <a [routerLink]="['/producto', producto.id]" class="btn btn-primary">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

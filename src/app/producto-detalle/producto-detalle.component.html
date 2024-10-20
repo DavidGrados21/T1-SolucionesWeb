@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <img [src]="producto.imagen" class="card-img-top w-25" alt="{{ producto.nombre }}">
+      <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <h6 class="card-text">{{ producto.descripcion }}</h6>
+          <h6 class="card-text"><strong>Precio: </strong>{{ producto.precio }}€</h6>
+          <h6 class="card-text"><strong>Stock: </strong>{{ producto.stock }}</h6>
+          
+          <!-- Renderizado condicional para el stock -->
+          <h6 class="text-danger" *ngIf="producto.stock === 0">Producto no disponible</h6>
+          <h6 class="text-success" *ngIf="producto.stock > 0">Producto disponible</h6>
+
+          <a routerLink="/" class="btn btn-primary">Volver a la lista</a>
+      </div>
+  </div>
+</div>
